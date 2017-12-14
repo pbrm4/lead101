@@ -1,0 +1,63 @@
+<html ng-app="addStudents" >
+<head>
+
+<link rel="stylesheet" href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css">
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script><!-- load jquery -->
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js"></script><!-- load angular -->
+<script src="core.js"></script>
+<script src="//code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+    
+<script>
+$(document).ready(function() {
+    $('#example').DataTable();
+} );
+</script>
+
+
+</head>
+<body>
+
+<div ng-controller="mainController">
+
+<a href = "add.html"> -Add Students </a>
+
+<table id="example" class="display" width="100%" data-page-length="25" data-order='[[ 1,"asc" ]]'>
+<thead>
+            <tr>
+				<th data-orderable="false">ID</th>
+                <th>Name</th>
+                <th>Age</th>
+                <th>School</th>
+                <th data-orderable="false">Class</th>
+                <th>Division</th>
+                <th data-orderable="false">Status</th>
+				<th data-orderable="false"></th>
+            </tr>
+        </thead>
+      
+        <tbody>
+            <tr ng-repeat="student in students">
+				<td></td>
+				<td>{{ student.name }}</td>
+				<td>{{ student.age }}</td>
+				<td>{{ student.school }}</td>
+				<td>{{ student.clas }}</td>
+				<td>{{ student.division }}</td>
+				<td>{{ student.sstauts }}</td>
+				<td><a href="" ng-click="sendEdit(student._id)" >Edit</a>&nbsp;&nbsp;<a href="#" ng-click="delete(student._id)">Delete</a></td>
+			</tr>
+			
+			</tbody>
+    </table>
+			
+			
+			
+
+
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
+
+</body>
+</html>
